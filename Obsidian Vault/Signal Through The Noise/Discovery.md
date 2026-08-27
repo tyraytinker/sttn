@@ -1,0 +1,1 @@
+Artists deserve to be discovered by ears - not algorithms.

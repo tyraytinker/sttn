@@ -1,0 +1,15 @@
+.DS_Store
+**/.DS_Store
+
+# Duplicate vault copy
+sttn/
+
+# Obsidian session state
+Obsidian Vault/.obsidian/workspace.json
+Obsidian Vault/.obsidian/workspace-mobile.json
+Obsidian Vault/.obsidian/graph.json
+Obsidian Vault/.trash/
+
+# Bundled plugin binaries (reinstall from Community Plugins)
+Obsidian Vault/.obsidian/plugins/*/main.js
+Obsidian Vault/.obsidian/plugins/*/data.json
