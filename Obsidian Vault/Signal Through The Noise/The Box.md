@@ -4,7 +4,7 @@ One machine. No uplink. Phones join it and get a website that only exists here. 
 
 It is venue gear. PA, lights, door, this.
 
-See [[Space]] for the contract. This note is how the contract is kept.
+See [[Space]] for the contract. See [[Closed Box Model]] for the full technical model. This note is how the contract is kept.
 
 ---
 
