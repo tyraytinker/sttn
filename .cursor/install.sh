@@ -34,6 +34,14 @@ install_git_plugin() {
     "https://github.com/Vinzent03/obsidian-git/releases/download/${GIT_PLUGIN_VERSION}/main.js"
 }
 
+configure_github_mirror() {
+  git -C "$REPO_ROOT" remote remove github 2>/dev/null || true
+  git -C "$REPO_ROOT" remote add github "https://github.com/tyraytinker/sttn.git"
+  git -C "$REPO_ROOT" config --local core.hooksPath "$REPO_ROOT/.cursor/git-hooks"
+  echo "Configured automatic GitHub mirror."
+}
+
 install_obsidian
 install_git_plugin
+configure_github_mirror
 echo "Setup complete."
