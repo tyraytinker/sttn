@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>STTN — Signal Through The Noise</title>
+    <meta
+      name="description"
+      content="Human music is worth protecting. Rooms, not platforms. You have to be there."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="home">
+    <a class="skip" href="#main">Skip to signal</a>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="bezel" aria-hidden="true">
+      <span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span>
+    </div>
+
+    <header class="site-header">
+      <a class="wordmark" href="index.html">
+        <strong>STTN</strong>
+        <span>Signal Through The Noise</span>
+      </a>
+      <p class="status"><span class="lamp" aria-hidden="true"></span> Closed box</p>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="site-nav" id="nav">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="mission.html" data-nav="mission">Mission</a>
+        <a href="the-box.html" data-nav="box">The Box</a>
+        <a href="nights.html" data-nav="nights">Nights</a>
+        <a class="join-link" href="join.html" data-nav="join">Join</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero wrap">
+        <p class="hero-meta">
+          <span>Transmission / CH-01</span>
+          <span>No uplink</span>
+          <span>sttn.room — only in the room</span>
+        </p>
+        <h1 class="poster">
+          <span class="line glitch" data-text="SIGNAL">SIGNAL</span>
+          <span class="line dim">THROUGH</span>
+          <span class="line">THE NOISE</span>
+        </h1>
+        <div class="hero-copy">
+          <p class="lede">Human music is worth protecting.</p>
+          <a class="btn" href="join.html">Join the commitment</a>
+        </div>
+      </section>
+
+      <div class="scope-wrap" aria-hidden="true">
+        <canvas id="scope"></canvas>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <p>
+            No livestream&nbsp;&nbsp;—&nbsp;&nbsp;No endless archive&nbsp;&nbsp;—&nbsp;&nbsp;You have to be there&nbsp;&nbsp;—&nbsp;&nbsp;People over platforms&nbsp;&nbsp;—&nbsp;&nbsp;Ears, not algorithms&nbsp;&nbsp;—&nbsp;&nbsp;
+          </p>
+          <p>
+            No livestream&nbsp;&nbsp;—&nbsp;&nbsp;No endless archive&nbsp;&nbsp;—&nbsp;&nbsp;You have to be there&nbsp;&nbsp;—&nbsp;&nbsp;People over platforms&nbsp;&nbsp;—&nbsp;&nbsp;Ears, not algorithms&nbsp;&nbsp;—&nbsp;&nbsp;
+          </p>
+        </div>
+      </div>
+
+      <section class="statement invert">
+        <div class="wrap">
+          <p class="kicker">01 / Human</p>
+          <h2>People over platforms.</h2>
+          <p>
+            Not nostalgic. Not anti-technology. Simply believing human expression has intrinsic value.
+          </p>
+        </div>
+      </section>
+
+      <section class="principles wrap">
+        <article class="principle">
+          <p class="kicker">Presence</p>
+          <h2>You have to be there.</h2>
+          <p>No livestream. No endless archive. The event exists because people gathered in one room.</p>
+        </article>
+        <article class="principle">
+          <p class="kicker">Discovery</p>
+          <h2>Ears, not algorithms.</h2>
+          <p>Artists deserve to be discovered by ears — not by a feed that already decided for you.</p>
+        </article>
+        <article class="principle">
+          <p class="kicker">Commitment</p>
+          <h2>Attendance is participation.</h2>
+          <p>People aren’t just buying a ticket. They’re joining something.</p>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="wrap split">
+          <div>
+            <p class="kicker">02 / The box</p>
+            <h2>The room holds what the night makes.</h2>
+          </div>
+          <div>
+            <p>
+              Every STTN event runs a local network. You join it from your phone. Photographs from the floor, work the artists leave — it stays on the box. It does not go online. It is never trained on. It is never advertised against.
+            </p>
+            <p>
+              You can look. You can listen, if an artist left sound. You can print before you leave. You do not take the file. If you want it again, you come back.
+            </p>
+            <p><a href="the-box.html">How the box keeps the contract →</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta invert">
+        <div class="wrap">
+          <p class="kicker">03 / Join</p>
+          <h2>The Commitment to Human Music.</h2>
+          <a class="btn" href="join.html">Sign the commitment</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>STTN keeps the disk. The public does not.</p>
+      <p>Local <span class="clock" data-clock></span></p>
+    </footer>
+    <script src="js/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join — STTN</title>
+    <meta
+      name="description"
+      content="Sign the Commitment to Human Music. You’re not buying a ticket. You’re joining something."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="join">
+    <a class="skip" href="#main">Skip to signal</a>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="bezel" aria-hidden="true">
+      <span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span>
+    </div>
+
+    <header class="site-header">
+      <a class="wordmark" href="index.html">
+        <strong>STTN</strong>
+        <span>Signal Through The Noise</span>
+      </a>
+      <p class="status"><span class="lamp" aria-hidden="true"></span> Closed box</p>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="site-nav" id="nav">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="mission.html" data-nav="mission">Mission</a>
+        <a href="the-box.html" data-nav="box">The Box</a>
+        <a href="nights.html" data-nav="nights">Nights</a>
+        <a class="join-link" href="join.html" data-nav="join">Join</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <header class="page-hero wrap">
+        <p class="kicker">Signup / Commitment</p>
+        <h1>Join something.</h1>
+        <p class="lede">People aren’t just buying a ticket. They’re joining the Commitment to Human Music.</p>
+      </header>
+
+      <section class="section">
+        <div class="wrap split">
+          <div>
+            <div class="bars" data-bars aria-hidden="true"></div>
+            <p class="aside-copy">
+              We don’t send recap emails. We don’t build a highlight reel. When a room opens near you, you’ll hear.
+            </p>
+          </div>
+          <div>
+            <form class="form" data-join-form>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="city">City</label>
+                <input id="city" name="city" type="text" autocomplete="address-level2" required />
+              </div>
+              <div class="check">
+                <input id="room" name="room" type="checkbox" required />
+                <label for="room">I will be in the room. No livestream. No archive from my seat.</label>
+              </div>
+              <button class="btn" type="submit">Sign the commitment</button>
+              <p class="form-note">Mock signup. Nothing leaves this page. The real list lives with STTN, not a platform.</p>
+            </form>
+
+            <div class="success" data-join-success tabindex="-1">
+              <p class="kicker">Received</p>
+              <h2>See you in the room, <span data-join-name>friend</span>.</h2>
+              <p>
+                You’re on the list. We won’t recap the night. If you want it again, you come back.
+              </p>
+              <p class="aside-copy"><a class="btn" href="nights.html">How a night works</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Attendance is participation.</p>
+      <p>Local <span class="clock" data-clock></span></p>
+    </footer>
+    <script src="js/site.js"></script>
+  </body>
+</html>
