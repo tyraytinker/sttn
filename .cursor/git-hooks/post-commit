@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -u
+
+if [[ -z "${GITHUB_SYNC_TOKEN:-}" ]]; then
+  echo "GitHub mirror skipped: GITHUB_SYNC_TOKEN is not available." >&2
+  exit 0
+fi
+
+branch="$(git symbolic-ref --quiet --short HEAD)" || exit 0
+repo_root="$(git rev-parse --show-toplevel)"
+
+if ! GIT_TERMINAL_PROMPT=0 GIT_ASKPASS="$repo_root/.cursor/git-hooks/github-askpass" \
+  git -c credential.helper= push github "HEAD:refs/heads/$branch"; then
+  echo "GitHub mirror failed for branch '$branch'." >&2
+fi
