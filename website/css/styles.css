@@ -237,9 +237,7 @@ a:hover {
   width: 2.65rem;
   height: 2.75rem;
   flex: 0 0 auto;
-  background: currentColor;
-  -webkit-mask: url("../assets/logo.svg") center / contain no-repeat;
-  mask: url("../assets/logo.svg") center / contain no-repeat;
+  object-fit: contain;
 }
 
 .wordmark-copy {
@@ -268,20 +266,17 @@ a:hover {
 .brand-mark {
   display: block;
   width: 5.5rem;
-  height: 2.4rem;
-  background: currentColor;
-  -webkit-mask: url("../assets/mark.svg") center / contain no-repeat;
-  mask: url("../assets/mark.svg") center / contain no-repeat;
+  height: auto;
+  aspect-ratio: 99 / 78;
+  object-fit: contain;
 }
 
 .brand-mark.lg {
   width: min(9rem, 28vw);
-  height: 3.5rem;
 }
 
 .join-mark {
   margin-bottom: 1.25rem;
-  color: var(--paper);
 }
 
 .footer-brand {
@@ -292,8 +287,6 @@ a:hover {
 
 .footer-brand .brand-mark {
   width: 3.4rem;
-  height: 1.45rem;
-  color: var(--paper);
   opacity: 0.9;
 }
 
