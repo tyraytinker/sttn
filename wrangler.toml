@@ -1,0 +1,4 @@
+# Cloudflare Pages: publish the static site, no build step.
+name = "sttn"
+compatibility_date = "2026-08-29"
+pages_build_output_dir = "website"
