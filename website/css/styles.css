@@ -47,13 +47,13 @@
 }
 
 :root {
-  --ink: #1a1a1a;
+  --ink: #191919;
   --paper: #e1e1e1;
   --mute: color-mix(in srgb, var(--paper) 42%, transparent);
   --rule: color-mix(in srgb, var(--paper) 18%, transparent);
   --pad: clamp(1.25rem, 4vw, 2.5rem);
   --wrap: 1120px;
-  --header: 4.25rem;
+  --header: 4.5rem;
   --sans: "Kedebideri", Helvetica, "Helvetica Neue", Arial, sans-serif;
   --display: "Unbounded", Helvetica, "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "Cascadia Code", "SF Mono", Menlo, monospace;
@@ -225,17 +225,35 @@ a:hover {
 
 .wordmark {
   display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+  align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
   line-height: 1;
+  color: var(--paper);
+}
+
+.wordmark-logo {
+  display: block;
+  width: 2.65rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  background: currentColor;
+  -webkit-mask: url("../assets/logo.svg") center / contain no-repeat;
+  mask: url("../assets/logo.svg") center / contain no-repeat;
+}
+
+.wordmark-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
 }
 
 .wordmark strong {
   font-family: var(--display);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 900;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
 }
 
 .wordmark span {
@@ -245,6 +263,44 @@ a:hover {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--mute);
+}
+
+.brand-mark {
+  display: block;
+  width: 5.5rem;
+  height: 2.4rem;
+  background: currentColor;
+  -webkit-mask: url("../assets/mark.svg") center / contain no-repeat;
+  mask: url("../assets/mark.svg") center / contain no-repeat;
+}
+
+.brand-mark.lg {
+  width: min(9rem, 28vw);
+  height: 3.5rem;
+}
+
+.join-mark {
+  margin-bottom: 1.25rem;
+  color: var(--paper);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.footer-brand .brand-mark {
+  width: 3.4rem;
+  height: 1.45rem;
+  color: var(--paper);
+  opacity: 0.9;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .status {
@@ -334,6 +390,11 @@ a:hover {
   grid-template-rows: auto 1fr auto;
   padding: 1.5rem 0 0;
   overflow: hidden;
+}
+
+.hero-brand {
+  margin: 0 0 1.25rem;
+  color: var(--paper);
 }
 
 .hero-meta {
@@ -898,12 +959,17 @@ a:hover {
   color: var(--mute);
 }
 
-.site-footer p {
+.site-footer .footer-meta p {
   margin: 0;
 }
 
-.site-footer a {
+.site-footer .footer-meta a {
+  color: var(--paper);
   text-decoration: none;
+}
+
+.site-footer .footer-meta a:hover {
+  text-decoration: underline;
 }
 
 .clock {

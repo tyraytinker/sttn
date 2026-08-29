@@ -23,9 +23,11 @@
     </div>
 
     <header class="site-header">
-      <a class="wordmark" href="index.html">
-        <strong>STTN</strong>
-        <span>Signal Through The Noise</span>
+      <a class="wordmark" href="index.html" aria-label="STTN, Signal Through The Noise">
+        <span class="wordmark-logo" aria-hidden="true"></span>
+        <span class="wordmark-copy">
+          <span>Signal Through The Noise</span>
+        </span>
       </a>
       <p class="status"><span class="lamp" aria-hidden="true"></span> Closed box</p>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
@@ -112,7 +114,13 @@
     </main>
 
     <footer class="site-footer">
-      <p>Fallback on the card: http://10.0.0.1</p>
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="footer-meta">
+          <p>Fallback on the card: http://10.0.0.1</p>
+          <p><a href="https://www.sttn.fm">www.sttn.fm</a></p>
+        </div>
+      </div>
       <p>Local <span class="clock" data-clock></span></p>
     </footer>
     <script src="js/site.js"></script>
