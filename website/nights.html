@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nights — STTN</title>
+    <meta
+      name="description"
+      content="How an STTN night works. No livestream. No endless archive. You have to be there."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="nights">
+    <a class="skip" href="#main">Skip to signal</a>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="bezel" aria-hidden="true">
+      <span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span>
+    </div>
+
+    <header class="site-header">
+      <a class="wordmark" href="index.html">
+        <strong>STTN</strong>
+        <span>Signal Through The Noise</span>
+      </a>
+      <p class="status"><span class="lamp" aria-hidden="true"></span> Closed box</p>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="site-nav" id="nav">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="mission.html" data-nav="mission">Mission</a>
+        <a href="the-box.html" data-nav="box">The Box</a>
+        <a href="nights.html" data-nav="nights">Nights</a>
+        <a class="join-link" href="join.html" data-nav="join">Join</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <header class="page-hero wrap">
+        <p class="kicker">Presence / Nights</p>
+        <h1>You have to be there.</h1>
+        <p class="lede">No livestream. No endless archive. Tonight is what you can see.</p>
+      </header>
+
+      <section class="section">
+        <div class="wrap">
+          <p class="kicker rundown-head">Night rundown</p>
+          <ol class="rundown">
+            <li>
+              <div>
+                <h3>Box on. WAN dark.</h3>
+                <p>The lamp is lit. The radio is up. There is no guest network to the public internet.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Tonight starts.</h3>
+                <p>Each event is its own folder. Tonight is the only night the public site mounts.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>The door is a card.</h3>
+                <p>
+                  SSID and a short address, printed. The phone’s “Sign in to network” sheet is the site. Artists get a second code for the drop.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Phones join the room.</h3>
+                <p>
+                  Floor: upload, look, print. Artists: listen, look, print stills. No ranking. No likes. No comments.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Paper at the station.</h3>
+                <p>
+                  The job is a button on the phone. The object lands at the printer. Someone has to unjam it. That is a role, not an edge case.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Pack-out.</h3>
+                <p>
+                  Power off. The disk stays with STTN. Next event, new folder. Old nights exist, and stay closed until someone in a room opens one.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="cta invert">
+        <div class="wrap">
+          <p class="kicker">If you want it again</p>
+          <h2>Come back.</h2>
+          <p>
+            You can look. You can listen, if an artist left sound. You can print before you leave. You do not take the file.
+          </p>
+          <a class="btn" href="join.html">Join the commitment</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Each night is its own folder.</p>
+      <p>Local <span class="clock" data-clock></span></p>
+    </footer>
+    <script src="js/site.js"></script>
+  </body>
+</html>
