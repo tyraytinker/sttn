@@ -474,39 +474,6 @@ a:hover {
   height: 132px;
 }
 
-.ticker {
-  overflow: hidden;
-  border-block: 1px solid var(--rule);
-  background: var(--ink);
-}
-
-.ticker-track {
-  display: flex;
-  width: max-content;
-  gap: 0;
-  animation: marquee 28s linear infinite;
-}
-
-.ticker p {
-  margin: 0;
-  padding: 0.7rem 0;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 .invert {
   background: var(--paper);
   color: var(--ink);
