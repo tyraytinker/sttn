@@ -891,6 +891,37 @@ a:hover {
   max-width: 28rem;
 }
 
+.event-meta {
+  margin-top: 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.source-list {
+  list-style: none;
+  margin: 1rem 0 2.5rem;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.source-list li {
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--rule);
+  max-width: 42rem;
+}
+
+.source-list a {
+  text-decoration: none;
+}
+
+.source-list a:hover {
+  text-decoration: underline;
+}
+
 .rundown-head {
   margin-bottom: 1.5rem;
 }
