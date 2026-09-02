@@ -697,6 +697,10 @@ a:hover {
   letter-spacing: -0.03em;
 }
 
+.rundown li:not(:has(p)) h3 {
+  margin-bottom: 0;
+}
+
 .rundown p {
   margin: 0;
   max-width: 38rem;
