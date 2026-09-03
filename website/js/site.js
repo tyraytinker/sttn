@@ -101,6 +101,8 @@
     if (!canvas.getContext) return;
     const ctx = canvas.getContext("2d");
     const scale = Number(canvas.dataset.scopeScale) || 1;
+    const fade = Number(canvas.dataset.scopeFade);
+    const trail = Number.isFinite(fade) ? fade : 0.22;
     const fit = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const width = canvas.clientWidth;
@@ -116,7 +118,7 @@
     const draw = () => {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
-      ctx.fillStyle = "rgba(26, 26, 26, 0.22)";
+      ctx.fillStyle = `rgba(26, 26, 26, ${trail})`;
       ctx.fillRect(0, 0, width, height);
       ctx.beginPath();
       ctx.strokeStyle = "#e1e1e1";
