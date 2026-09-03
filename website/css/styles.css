@@ -657,6 +657,11 @@ a:hover {
   max-width: 28ch;
 }
 
+.page-hero .lede.event-line {
+  max-width: none;
+  white-space: nowrap;
+}
+
 .pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1077,6 +1082,10 @@ a:hover {
     overflow: hidden;
     clip: rect(0 0 0 0);
     white-space: nowrap;
+  }
+
+  .page-hero .lede.event-line {
+    font-size: clamp(0.72rem, 3.2vw, 1.05rem);
   }
 
   .menu-toggle {
