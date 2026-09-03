@@ -914,10 +914,11 @@ a:hover {
 
 .dj-photo {
   width: 100%;
+  max-width: 28rem;
   height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.15);
+  object-position: center top;
 }
 
 .dj-info h2 {
