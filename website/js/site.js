@@ -6,6 +6,70 @@
     }
   });
 
+  const BOX_LABELS = {
+    closed: "Box closed",
+    transport: "Box in transport",
+    open: "Box open",
+  };
+
+  const chicagoToday = () =>
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/Chicago",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(new Date());
+
+  const daysUntil = (night, today) => {
+    const toUtc = (ymd) => {
+      const [year, month, day] = ymd.split("-").map(Number);
+      return Date.UTC(year, month - 1, day);
+    };
+    return Math.round((toUtc(night) - toUtc(today)) / 86400000);
+  };
+
+  const boxState = (nights, today) => {
+    let state = "closed";
+    for (const night of nights) {
+      const delta = daysUntil(night, today);
+      if (delta === 0) return "open";
+      if (delta >= 1 && delta <= 7) state = "transport";
+    }
+    return state;
+  };
+
+  const nightDatesFrom = (doc) =>
+    [...doc.querySelectorAll("[data-night-date]")]
+      .map((el) => el.getAttribute("data-night-date"))
+      .filter(Boolean);
+
+  const readNightDates = () => {
+    const local = nightDatesFrom(document);
+    if (local.length) return Promise.resolve(local);
+    return fetch("nights.html")
+      .then((res) => (res.ok ? res.text() : ""))
+      .then((html) => {
+        if (!html) return [];
+        return nightDatesFrom(new DOMParser().parseFromString(html, "text/html"));
+      })
+      .catch(() => []);
+  };
+
+  const statusRoot = document.querySelector("[data-box-status]");
+  if (statusRoot) {
+    const label = statusRoot.querySelector("[data-status-label]");
+    const setState = (state) => {
+      statusRoot.dataset.state = state;
+      statusRoot.querySelectorAll("[data-lamp]").forEach((lamp) => {
+        lamp.classList.toggle("is-lit", lamp.dataset.lamp === state);
+      });
+      if (label) label.textContent = BOX_LABELS[state];
+      statusRoot.setAttribute("aria-label", BOX_LABELS[state]);
+    };
+    setState("closed");
+    readNightDates().then((dates) => setState(boxState(dates, chicagoToday())));
+  }
+
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".site-nav");
   if (toggle && nav) {
