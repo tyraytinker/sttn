@@ -95,20 +95,12 @@
     window.setInterval(tick, 1000);
   }
 
-  const bars = document.querySelector("[data-bars]");
-  if (bars) {
-    for (let i = 0; i < 28; i += 1) {
-      const mark = document.createElement("i");
-      mark.style.height = `${18 + Math.random() * 24}px`;
-      mark.style.animationDelay = `${(i % 7) * 0.12}s`;
-      bars.appendChild(mark);
-    }
-  }
-
-  const canvas = document.getElementById("scope");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (canvas && canvas.getContext) {
+  const scopes = document.querySelectorAll("[data-scope]");
+  scopes.forEach((canvas) => {
+    if (!canvas.getContext) return;
     const ctx = canvas.getContext("2d");
+    const scale = Number(canvas.dataset.scopeScale) || 1;
     const fit = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const width = canvas.clientWidth;
@@ -128,15 +120,16 @@
       ctx.fillRect(0, 0, width, height);
       ctx.beginPath();
       ctx.strokeStyle = "#e1e1e1";
-      ctx.lineWidth = 1.2;
+      ctx.lineWidth = Math.max(1, 1.2 * Math.min(1, scale + 0.4));
       for (let x = 0; x < width; x += 1) {
         const n = x / width;
         const y =
           height * 0.52 +
-          Math.sin(n * 18 + t) * 22 +
-          Math.sin(n * 47 + t * 1.6) * 11 +
-          Math.sin(n * 90 + t * 0.45) * 4 +
-          Math.sin(n * 7.5 - t * 0.8) * 8;
+          (Math.sin(n * 18 + t) * 22 +
+            Math.sin(n * 47 + t * 1.6) * 11 +
+            Math.sin(n * 90 + t * 0.45) * 4 +
+            Math.sin(n * 7.5 - t * 0.8) * 8) *
+            scale;
         if (x === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
@@ -149,7 +142,7 @@
     ctx.fillStyle = "#1a1a1a";
     ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
     draw();
-  }
+  });
 
   const form = document.querySelector("[data-join-form]");
   const success = document.querySelector("[data-join-success]");
