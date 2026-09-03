@@ -323,32 +323,32 @@ a:hover {
 }
 
 .lamp-closed {
-  background: #4a3535;
+  background: #6a4040;
 }
 
 .lamp-transport {
-  background: #3f3c32;
+  background: #5c5638;
 }
 
 .lamp-open {
-  background: #343a35;
+  background: #3d4a3e;
 }
 
 .lamp-closed.is-lit {
-  background: #a86868;
-  box-shadow: 0 0 0 3px color-mix(in srgb, #a86868 22%, transparent);
+  background: #c07070;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #c07070 22%, transparent);
   animation: pulse 2.8s ease-in-out infinite;
 }
 
 .lamp-transport.is-lit {
-  background: #b8a86a;
-  box-shadow: 0 0 0 3px color-mix(in srgb, #b8a86a 22%, transparent);
+  background: #c4b46a;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #c4b46a 22%, transparent);
   animation: pulse 2.8s ease-in-out infinite;
 }
 
 .lamp-open.is-lit {
-  background: #7a9a7e;
-  box-shadow: 0 0 0 3px color-mix(in srgb, #7a9a7e 22%, transparent);
+  background: #7fa884;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #7fa884 22%, transparent);
   animation: pulse 2.8s ease-in-out infinite;
 }
 
@@ -367,7 +367,7 @@ a:hover {
     opacity: 1;
   }
   50% {
-    opacity: 0.35;
+    opacity: 0.72;
   }
 }
 
