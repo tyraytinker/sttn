@@ -905,6 +905,57 @@ a:hover {
   color: var(--mute);
 }
 
+.dj-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  align-items: start;
+}
+
+.dj-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.15);
+}
+
+.dj-info h2 {
+  margin: 0 0 1rem;
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  font-synthesis: none;
+}
+
+.dj-info p {
+  max-width: 32rem;
+  margin: 0 0 1rem;
+  color: color-mix(in srgb, var(--paper) 86%, transparent);
+}
+
+.dj-handle {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+.dj-handle a {
+  text-decoration: none;
+}
+
+.dj-handle a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+  .dj-feature {
+    grid-template-columns: 1fr;
+  }
+}
+
 .source-list {
   list-style: none;
   margin: 1rem 0 2.5rem;
