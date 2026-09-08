@@ -1001,22 +1001,27 @@ a:hover {
 
 .dj-feature {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(1.5rem, 5vw, 3.5rem);
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(1.25rem, 4vw, 2.75rem);
   align-items: start;
 }
 
 .dj-photo {
+  display: block;
   width: 100%;
-  max-width: 28rem;
+  max-width: 26rem;
   height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 28%;
+}
+
+.dj-info {
+  min-width: 0;
 }
 
 .dj-info h2 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
   font-family: var(--display);
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 900;
@@ -1025,13 +1030,27 @@ a:hover {
   font-synthesis: none;
 }
 
-.dj-info p {
-  max-width: 32rem;
-  margin: 0 0 1rem;
+.dj-info > p,
+.dj-quote p {
+  max-width: 34rem;
+  margin: 0 0 0.9rem;
   color: color-mix(in srgb, var(--paper) 86%, transparent);
 }
 
+.dj-quote {
+  margin: 0 0 1rem;
+  padding: 0 0 0 0.9rem;
+  border-left: 1px solid var(--rule);
+}
+
+.dj-quote p {
+  margin: 0;
+  font-style: italic;
+  color: color-mix(in srgb, var(--paper) 72%, transparent);
+}
+
 .dj-handle {
+  margin: 0;
   font-family: var(--mono);
   font-size: 0.78rem;
   letter-spacing: 0.06em;
@@ -1048,6 +1067,17 @@ a:hover {
 @media (max-width: 860px) {
   .dj-feature {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .dj-photo {
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+
+  .dj-info > p,
+  .dj-quote p {
+    max-width: none;
   }
 }
 
