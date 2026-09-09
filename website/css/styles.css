@@ -799,6 +799,27 @@ a:hover {
   letter-spacing: 0.04em;
 }
 
+.form .hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-error {
+  margin: 0 0 1rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, #c45c5c 80%, var(--paper));
+}
+
+.form .btn:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
 .success {
   display: none;
   padding: 1.5rem 0 3rem;

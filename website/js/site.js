@@ -85,15 +85,64 @@
   const form = document.querySelector("[data-join-form]");
   const success = document.querySelector("[data-join-success]");
   const nameOut = document.querySelector("[data-join-name]");
+  const errorOut = document.querySelector("[data-join-error]");
+  const submitBtn = document.querySelector("[data-join-submit]");
   if (form && success) {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
-      const name = (form.elements.namedItem("name") || {}).value || "friend";
-      if (nameOut) nameOut.textContent = name.trim().split(/\s+/)[0];
-      form.classList.add("is-off");
-      success.classList.add("is-on");
-      success.focus();
+
+      const endpoint = form.getAttribute("action");
+      if (!endpoint) return;
+
+      if (errorOut) {
+        errorOut.hidden = true;
+        errorOut.textContent = "";
+      }
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Signing…";
+      }
+      form.setAttribute("aria-busy", "true");
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+
+        if (!response.ok) {
+          let message = "Couldn’t send that. Try again in a moment.";
+          try {
+            const payload = await response.json();
+            if (payload && payload.errors && payload.errors[0] && payload.errors[0].message) {
+              message = payload.errors[0].message;
+            }
+          } catch (_) {
+            /* keep default */
+          }
+          throw new Error(message);
+        }
+
+        const name = (form.elements.namedItem("name") || {}).value || "friend";
+        if (nameOut) nameOut.textContent = name.trim().split(/\s+/)[0];
+        form.classList.add("is-off");
+        success.classList.add("is-on");
+        success.focus();
+      } catch (err) {
+        if (errorOut) {
+          errorOut.textContent =
+            (err && err.message) || "Couldn’t send that. Try again in a moment.";
+          errorOut.hidden = false;
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Sign";
+        }
+      } finally {
+        form.removeAttribute("aria-busy");
+      }
     });
   }
 })();
