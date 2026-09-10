@@ -9,7 +9,7 @@
     <link rel="preload" href="fonts/unbounded-900.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="fonts/kedebideri-900.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="fonts/kedebideri-400.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="css/styles.css?v=20260909-nobox" />
+    <link rel="stylesheet" href="css/styles.css?v=20260909-join" />
   </head>
   <body data-page="join">
     <a class="skip" href="#main">Skip to signal</a>
@@ -51,7 +51,21 @@
             </div>
           </div>
           <div>
-            <form class="form" data-join-form>
+            <form
+              class="form"
+              data-join-form
+              action="https://formspree.io/f/myeylbel"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="STTN Join" />
+              <input
+                class="hp"
+                type="text"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
               <div class="field">
                 <label for="name">Name</label>
                 <input id="name" name="name" type="text" autocomplete="name" required />
@@ -65,10 +79,11 @@
                 <input id="city" name="city" type="text" autocomplete="address-level2" required />
               </div>
               <div class="check">
-                <input id="room" name="room" type="checkbox" required />
+                <input id="room" name="commitment" type="checkbox" value="I commit to human music." required />
                 <label for="room">I commit to human music.</label>
               </div>
-              <button class="btn" type="submit">Sign</button>
+              <p class="form-error" data-join-error hidden role="alert"></p>
+              <button class="btn" type="submit" data-join-submit>Sign</button>
             </form>
 
             <div class="success" data-join-success tabindex="-1">
@@ -90,6 +105,6 @@
       </div>
       <p>Local <span class="clock" data-clock></span></p>
     </footer>
-    <script src="js/site.js?v=20260909-nobox"></script>
+    <script src="js/site.js?v=20260909-join"></script>
   </body>
 </html>
