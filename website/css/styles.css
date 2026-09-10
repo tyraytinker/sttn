@@ -792,9 +792,11 @@ a:hover {
 }
 
 .form-note {
-  margin: 1.25rem 0 0;
+  margin: 1.1rem 0 0;
+  max-width: 28rem;
   font-family: var(--mono);
   font-size: 0.72rem;
+  line-height: 1.55;
   color: var(--mute);
   letter-spacing: 0.04em;
 }
