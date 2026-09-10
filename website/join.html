@@ -9,7 +9,7 @@
     <link rel="preload" href="fonts/unbounded-900.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="fonts/kedebideri-900.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="fonts/kedebideri-400.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="css/styles.css?v=20260909-join" />
+    <link rel="stylesheet" href="css/styles.css?v=20260910-rsvp" />
   </head>
   <body data-page="join">
     <a class="skip" href="#main">Skip to signal</a>
@@ -38,8 +38,9 @@
 
     <main id="main">
       <header class="page-hero wrap">
-        <p class="kicker">Join</p>
-        <h1>Commitment to Human Music.</h1>
+        <p class="kicker" data-join-kicker>Join</p>
+        <h1 data-join-title>Commitment to Human Music.</h1>
+        <p class="lede" data-join-lede hidden></p>
       </header>
 
       <section class="section">
@@ -57,7 +58,8 @@
               action="https://formspree.io/f/myeylbel"
               method="POST"
             >
-              <input type="hidden" name="_subject" value="STTN Join" />
+              <input type="hidden" name="_subject" value="STTN Join" data-join-subject />
+              <input type="hidden" name="event" value="" data-join-event />
               <input
                 class="hp"
                 type="text"
@@ -84,12 +86,16 @@
               </div>
               <p class="form-error" data-join-error hidden role="alert"></p>
               <button class="btn" type="submit" data-join-submit>Sign</button>
+              <p class="form-note" data-join-note>We’ll share upcoming events and resources.</p>
             </form>
 
             <div class="success" data-join-success tabindex="-1">
               <p class="kicker">Received</p>
               <h2>See you in the room, <span data-join-name>friend</span>.</h2>
-              <p class="aside-copy"><a class="btn" href="nights.html">[Projections] · Sept 17</a></p>
+              <p class="aside-copy" data-join-success-detail hidden></p>
+              <p class="aside-copy" data-join-success-cta>
+                <a class="btn" href="nights.html">[Projections] · Sept 17</a>
+              </p>
             </div>
           </div>
         </div>
@@ -105,6 +111,6 @@
       </div>
       <p>Local <span class="clock" data-clock></span></p>
     </footer>
-    <script src="js/site.js?v=20260909-join"></script>
+    <script src="js/site.js?v=20260910-rsvp"></script>
   </body>
 </html>
