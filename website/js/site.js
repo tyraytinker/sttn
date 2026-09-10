@@ -82,11 +82,63 @@
     draw();
   });
 
+  const JOIN_EVENTS = {
+    projections: {
+      slug: "projections",
+      label: "[Projections]",
+      when: "Sept 17",
+      subject: "STTN RSVP · [Projections]",
+    },
+  };
+
   const form = document.querySelector("[data-join-form]");
   const success = document.querySelector("[data-join-success]");
   const nameOut = document.querySelector("[data-join-name]");
   const errorOut = document.querySelector("[data-join-error]");
   const submitBtn = document.querySelector("[data-join-submit]");
+  const eventInput = document.querySelector("[data-join-event]");
+  const subjectInput = document.querySelector("[data-join-subject]");
+  const kickerEl = document.querySelector("[data-join-kicker]");
+  const titleEl = document.querySelector("[data-join-title]");
+  const ledeEl = document.querySelector("[data-join-lede]");
+  const noteEl = document.querySelector("[data-join-note]");
+  const successDetail = document.querySelector("[data-join-success-detail]");
+  const successCta = document.querySelector("[data-join-success-cta]");
+
+  let activeEvent = null;
+  let submitLabel = "Sign";
+
+  if (form) {
+    const params = new URLSearchParams(window.location.search);
+    const eventSlug = (params.get("event") || "").trim().toLowerCase();
+    activeEvent = JOIN_EVENTS[eventSlug] || null;
+
+    if (activeEvent) {
+      document.title = `RSVP / ${activeEvent.label} / STTN`;
+      if (kickerEl) kickerEl.textContent = "RSVP";
+      if (titleEl) titleEl.textContent = activeEvent.label;
+      if (ledeEl) {
+        ledeEl.hidden = false;
+        ledeEl.textContent = `Sign the commitment to enter · ${activeEvent.when}`;
+      }
+      if (eventInput) eventInput.value = activeEvent.label;
+      if (subjectInput) subjectInput.value = activeEvent.subject;
+      submitLabel = "Sign to enter";
+      if (submitBtn) submitBtn.textContent = submitLabel;
+      if (noteEl) {
+        noteEl.textContent =
+          "This RSVP signs the commitment. We’ll also share upcoming events and resources.";
+      }
+      if (successDetail) {
+        successDetail.hidden = false;
+        successDetail.textContent = `You’re on the list for ${activeEvent.label} · ${activeEvent.when}.`;
+      }
+      if (successCta) successCta.hidden = true;
+    } else if (eventInput) {
+      eventInput.removeAttribute("name");
+    }
+  }
+
   if (form && success) {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -138,7 +190,7 @@
         }
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = "Sign";
+          submitBtn.textContent = submitLabel;
         }
       } finally {
         form.removeAttribute("aria-busy");
