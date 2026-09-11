@@ -272,7 +272,7 @@ a:hover {
 }
 
 .brand-mark.lg {
-  width: min(9rem, 28vw);
+  width: clamp(7.5rem, 16vw, 13.5rem);
 }
 
 .join-mark {
@@ -352,11 +352,6 @@ a:hover {
   overflow: hidden;
 }
 
-.hero-brand {
-  margin: 0 0 1.25rem;
-  color: var(--paper);
-}
-
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
@@ -369,8 +364,27 @@ a:hover {
   color: var(--mute);
 }
 
+.hero-lockup {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(1rem, 3.5vw, 2.75rem);
+  align-items: center;
+  margin-top: clamp(2rem, 7vh, 5.5rem);
+  min-width: 0;
+}
+
+.hero-brand {
+  margin: 0;
+  color: var(--paper);
+}
+
+.hero-brand .brand-mark.lg {
+  width: clamp(7.5rem, 16vw, 13.5rem);
+}
+
 .poster {
-  margin: 8vh 0 0;
+  margin: 0;
+  min-width: 0;
   font-family: var(--display);
   font-size: clamp(2.6rem, 11vw, 8.6rem);
   font-weight: 900;
@@ -1015,6 +1029,15 @@ a:hover {
 @media (max-width: 860px) {
   .site-header {
     grid-template-columns: 1fr auto;
+  }
+
+  .hero-brand {
+    display: none;
+  }
+
+  .hero-lockup {
+    grid-template-columns: 1fr;
+    margin-top: clamp(1.25rem, 4vh, 2.5rem);
   }
 
   .page-hero .lede.event-line {
