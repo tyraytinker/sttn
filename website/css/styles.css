@@ -152,48 +152,6 @@ a:hover {
   );
 }
 
-.bezel {
-  pointer-events: none;
-  position: fixed;
-  inset: 10px;
-  z-index: 31;
-  border: 1px solid var(--rule);
-}
-
-.bezel span {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-}
-
-.bezel .tl {
-  top: -1px;
-  left: -1px;
-  border-top: 1px solid var(--paper);
-  border-left: 1px solid var(--paper);
-}
-
-.bezel .tr {
-  top: -1px;
-  right: -1px;
-  border-top: 1px solid var(--paper);
-  border-right: 1px solid var(--paper);
-}
-
-.bezel .bl {
-  bottom: -1px;
-  left: -1px;
-  border-bottom: 1px solid var(--paper);
-  border-left: 1px solid var(--paper);
-}
-
-.bezel .br {
-  bottom: -1px;
-  right: -1px;
-  border-bottom: 1px solid var(--paper);
-  border-right: 1px solid var(--paper);
-}
-
 .wrap {
   width: min(var(--wrap), calc(100% - (var(--pad) * 2)));
   margin-inline: auto;
