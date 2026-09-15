@@ -946,23 +946,8 @@ a:hover {
   max-width: 46rem;
 }
 
-.resource-title {
-  display: inline-block;
-  max-width: 42rem;
-  text-decoration: none;
-  color: color-mix(in srgb, var(--paper) 78%, transparent);
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
-}
-
-.resource-title:hover {
-  color: var(--paper);
-  text-decoration: underline;
-}
-
 .resource-headline {
+  display: inline-block;
   margin: 0;
   max-width: 40rem;
   color: var(--paper);
@@ -970,6 +955,11 @@ a:hover {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.3;
+  text-decoration: none;
+}
+
+.resource-headline:hover {
+  text-decoration: underline;
 }
 
 .resource-date {
