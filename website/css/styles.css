@@ -305,7 +305,7 @@ a:hover {
   position: relative;
   min-height: calc(100svh - var(--header));
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr;
   padding: 1.5rem 0 0;
   overflow: hidden;
 }
@@ -368,7 +368,8 @@ a:hover {
   align-items: flex-end;
   justify-content: space-between;
   gap: 1.5rem;
-  margin: 2.5rem 0 2rem;
+  align-self: start;
+  margin: 0.75rem 0 2rem;
 }
 
 .lede {
