@@ -946,6 +946,16 @@ a:hover {
   max-width: 46rem;
 }
 
+.resource-title {
+  margin: 0;
+  max-width: 42rem;
+  color: color-mix(in srgb, var(--paper) 78%, transparent);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
 .resource-headline {
   display: inline-block;
   margin: 0;
