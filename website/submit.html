@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Submit / STTN</title>
+    <meta
+      name="description"
+      content="Independent journalists — send a link or blurb for STTN Resources."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="fonts/unbounded-900.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/kedebideri-900.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/kedebideri-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/styles.css?v=20261119-submit" />
+  </head>
+  <body data-page="submit">
+    <a class="skip" href="#main">Skip to signal</a>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="STTN, Signal Through The Noise">
+        <img class="wordmark-logo" src="assets/logo-paper.png" width="96" height="100" alt="" decoding="async" />
+        <span class="wordmark-copy">
+          <span>Signal Through The Noise</span>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="site-nav" id="nav">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="mission.html" data-nav="mission">Mission</a>
+        <a href="nights.html" data-nav="nights">Nights</a>
+        <a href="resources.html" data-nav="resources">Resources</a>
+        <a class="join-link" href="join.html" data-nav="join">Join</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <header class="page-hero wrap">
+        <p class="kicker">Contribute</p>
+        <h1>Send something worth reading.</h1>
+        <p class="lede">
+          Independent journalists — pitch a published piece or a short blurb for Resources. We read
+          everything; we post what fits.
+        </p>
+      </header>
+
+      <section class="section">
+        <div class="wrap split">
+          <div>
+            <img class="brand-mark join-mark" src="assets/mark-paper.png" width="240" height="190" alt="" decoding="async" />
+            <div class="join-scope" aria-hidden="true">
+              <canvas class="scope" data-scope data-scope-scale="0.38" data-scope-fade="0.08"></canvas>
+            </div>
+          </div>
+          <div>
+            <form
+              class="form"
+              data-mail-form
+              data-mail-idle="Send"
+              data-mail-busy="Sending…"
+              action="https://formspree.io/f/myeylbel"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="STTN Resources · Submit" />
+              <input type="hidden" name="form" value="journalist-submit" />
+              <input
+                class="hp"
+                type="text"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="outlet">Outlet / byline</label>
+                <input
+                  id="outlet"
+                  name="outlet"
+                  type="text"
+                  autocomplete="organization"
+                  placeholder="Independent, or where it ran"
+                />
+              </div>
+              <div class="field">
+                <label for="url">Link to the piece</label>
+                <input
+                  id="url"
+                  name="url"
+                  type="url"
+                  inputmode="url"
+                  placeholder="https://"
+                />
+              </div>
+              <div class="field">
+                <label for="title">Suggested title</label>
+                <input id="title" name="title" type="text" maxlength="160" />
+              </div>
+              <div class="field">
+                <label for="blurb">Blurb or takeaway</label>
+                <textarea
+                  id="blurb"
+                  name="blurb"
+                  rows="5"
+                  maxlength="1200"
+                  minlength="20"
+                  required
+                  placeholder="What should readers take away — or the short piece itself."
+                ></textarea>
+              </div>
+              <p class="form-error" data-mail-error hidden role="alert"></p>
+              <button class="btn" type="submit" data-mail-submit>Send</button>
+              <p class="form-note">
+                We curate by hand. A link helps; a sharp blurb is enough. Nothing posts without a human
+                read.
+              </p>
+            </form>
+
+            <div class="success" data-mail-success tabindex="-1">
+              <p class="kicker">Received</p>
+              <h2>Thanks, <span data-mail-name>friend</span>.</h2>
+              <p class="aside-copy">We’ll read it and follow up if it lands in Resources.</p>
+              <p class="aside-copy">
+                <a class="btn" href="resources.html">Back to Resources</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img class="brand-mark" src="assets/mark-paper.png" width="240" height="190" alt="" decoding="async" />
+        <div class="footer-meta">
+          <p><a href="https://www.sttn.fm">www.sttn.fm</a></p>
+        </div>
+      </div>
+      <p>Local <span class="clock" data-clock></span></p>
+    </footer>
+    <script src="js/site.js?v=20261119-submit"></script>
+  </body>
+</html>
